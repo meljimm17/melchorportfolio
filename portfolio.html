@@ -516,9 +516,24 @@ a {
       </div>
     </div>
 
+     <script>
+    // Disable right-click
+    document.addEventListener('contextmenu', e => e.preventDefault());
+
+    // Disable common shortcuts like F12 (DevTools) and Ctrl+U (View Source)
+    document.addEventListener('keydown', e => {
+      if (e.key === "F12" || (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+        alert("Inspecting code is disabled on this site.");
+      }
+    });
+  </script>
+
     <footer class="bg-dark text-white text-center py-3 mt-4">
       <p class="mb-0">© 2026 Mel Jimm S. Joves. All rights reserved.</p>
     </footer>
+
+
 
   </body>
 </html>
