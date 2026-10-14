@@ -5,649 +5,1782 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Melchor S. Joves Jr.'s portfolio showcasing experience as a Virtual Assistant and Lead Generation Specialist, with skills in communication, problem-solving, data analysis, and CRM management."
+      content="Melchor S. Joves Jr. — Virtual Assistant and Lead Generation Specialist with 5+ years helping US companies with lead generation, email outreach, and CRM data quality."
     />
-    <title>My Portfolio</title>
+    <title>Melchor Joves Jr. | Lead Generation Specialist</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    ></script>
-
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
       rel="stylesheet"
     />
 
     <style>
+      /* ===== THEME ===== */
+      :root {
+        --bg: #f4f5f7;
+        --surface: #ffffff;
+        --surface-2: #f8fafc;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --accent: #0f766e;
+        --accent-soft: #ccfbf1;
+        --accent-text: #ffffff;
+        --shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
+          0 8px 24px rgba(15, 23, 42, 0.06);
+        --radius: 18px;
+      }
+
+      /* Dark theme: follows the device unless the visitor picks one */
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0b0f17;
+          --surface: #121826;
+          --surface-2: #172033;
+          --text: #e5e7eb;
+          --muted: #94a3b8;
+          --border: #243046;
+          --accent: #2dd4bf;
+          --accent-soft: rgba(45, 212, 191, 0.14);
+          --accent-text: #042f2e;
+          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      :root[data-theme="dark"] {
+        --bg: #0b0f17;
+        --surface: #121826;
+        --surface-2: #172033;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --border: #243046;
+        --accent: #2dd4bf;
+        --accent-soft: rgba(45, 212, 191, 0.14);
+        --accent-text: #042f2e;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
       body {
-        background-color: #f2f3f5;
-        transition:
-          background-color 0.3s,
-          color 0.3s;
-      }
-
-      .bg-light {
-        background-color: #ffffff !important;
-      }
-
-      .profile {
-        width: 150px;
-        max-width: 100%;
-        height: auto;
-        border-radius: 10%;
-      }
-
-      .skill-card {
-        background-color: transparent;
-        border: 2px solid #524d4d;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        padding: 0.5rem;
-        min-height: 50px;
-        flex-wrap: wrap;
-        transition:
-          color 0.3s,
-          border-color 0.3s,
-          background-color 0.3s;
-      }
-
-      .skill-card i {
-        margin-right: 0.5rem;
-        padding: 0.2rem 0.2rem;
-        min-height: auto;
-        font-size: 1rem;
-      }
-
-      .skill-card:hover {
-        background-color: gray;
-        color: white;
-        border-color: gray;
-        cursor: pointer;
-      }
-
-      .skill-card:hover i {
-        color: white !important;
-      }
-
-      .custom-btn {
-        background-color: transparent;
-        color: black;
-        border: 2px solid #555;
-        transition: 0.3s;
-        padding: 0.2rem 0.5rem;
-      }
-
-      .custom-btn:hover {
-        background-color: gray;
-        color: white;
-      }
-
-      .card {
-        transition:
-          background-color 0.3s,
-          color 0.3s,
-          border-color 0.3s;
-      }
-
-      a:hover .card {
-        background-color: gray !important;
-        color: white !important;
-        border-color: gray !important;
-      }
-
-      a:hover .card small {
-        color: #e0e0e0 !important;
-      }
-
-      /* ===== ANIMATION ===== */
-      @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .fade-up {
-        opacity: 0;
-        animation: fadeUp 0.8s ease forwards;
-      }
-
-      .fade-up:nth-child(1) {
-        animation-delay: 0.2s;
-      }
-      .fade-up:nth-child(2) {
-        animation-delay: 0.4s;
-      }
-      .fade-up:nth-child(3) {
-        animation-delay: 0.6s;
-      }
-      .fade-up:nth-child(4) {
-        animation-delay: 0.8s;
-      }
-      .fade-up:nth-child(5) {
-        animation-delay: 1s;
-      }
-
-      .timeline {
-        position: relative;
-        border-left: 3px solid #6c757d;
-      }
-
-      .timeline-item {
-        position: relative;
-        margin-bottom: 2rem;
-        padding-left: 20px;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: -11px;
-        top: 0;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 3px solid #6c757d;
-        background-color: white;
-        transition: background-color 0.3s;
-      }
-
-      .timeline-item.latest::before {
-        background-color: #6c757d;
-        border-color: #6c757d;
-      }
-
-      .timeline-item h5 {
-        margin-bottom: 0.25rem;
-      }
-      .timeline-item p {
-        margin-bottom: 0.25rem;
-      }
-      .timeline-item ul {
-        margin-top: 0.25rem;
-        padding-left: 1.2rem;
-      }
-
-      .tool-logo {
-        width: 20px;
-        height: 20px;
-        margin-right: 8px;
-        filter: grayscale(100%) brightness(60%);
-        transition: filter 0.3s ease;
-      }
-
-      .skill-card:hover .tool-logo {
-        filter: none !important;
+        margin: 0;
+        font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI",
+          Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
 
       a {
-        color: black;
-        text-decoration: underline;
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .wrap {
+        width: min(1180px, 100% - 32px);
+        margin-inline: auto;
+      }
+
+      /* ===== NAV ===== */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: color-mix(in srgb, var(--bg) 80%, transparent);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: var(--accent-text);
+        font-size: 0.85rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 4px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.2s, background-color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--text);
+        background: var(--surface);
+      }
+
+      @media (max-width: 760px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font: inherit;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s, border-color 0.2s,
+          color 0.2s;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-text);
+      }
+
+      .btn-primary:hover {
+        color: var(--accent-text);
+        filter: brightness(1.08);
+      }
+
+      .btn-sm {
+        padding: 7px 14px;
+        font-size: 0.82rem;
+      }
+
+      /* ===== CARD ===== */
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin-bottom: 20px;
+      }
+
+      .section-title i {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 1rem;
+      }
+
+      .section-title .count {
+        margin-left: auto;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .hero-main {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 128px;
+        height: 128px;
+        border-radius: 24px;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 4px solid var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .status::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 currentColor;
+        }
+        50% {
+          box-shadow: 0 0 0 5px transparent;
+        }
+      }
+
+      .hero h1 {
+        font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+
+      .hero .role {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--accent);
+        margin-top: 6px;
+      }
+
+      .hero .loc {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 4px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .stat {
+        padding: 18px;
+        border-radius: 14px;
+        background: var(--surface-2);
+        border: 1px solid var(--border);
+      }
+
+      .stat b {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .stat span {
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .hero-main {
+          flex-direction: column;
+        }
+        .avatar {
+          width: 104px;
+          height: 104px;
+        }
+      }
+
+      /* ===== MAIN LAYOUT ===== */
+      .layout {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.85fr);
+        gap: 24px;
+        align-items: start;
+      }
+
+      .col {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      /* Only pin the About column when it fits on screen */
+      @media (min-width: 901px) and (min-height: 640px) {
+        .sticky {
+          position: sticky;
+          top: 88px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .about p + p {
+        margin-top: 12px;
+      }
+
+      .about p {
+        color: var(--muted);
+      }
+
+      .about strong {
+        color: var(--text);
+      }
+
+      /* ===== EXPERIENCE ===== */
+      .timeline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 21px;
+        top: 24px;
+        bottom: 24px;
+        width: 2px;
+        background: var(--border);
+      }
+
+      .job {
+        position: relative;
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 16px;
+      }
+
+      .job-logo {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        font-size: 0.78rem;
+        font-weight: 800;
+        color: var(--muted);
+      }
+
+      .job.latest .job-logo {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-text);
+      }
+
+      .job-body {
+        padding: 18px 20px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        transition: border-color 0.2s, transform 0.2s;
+      }
+
+      .job-body:hover {
+        border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+      }
+
+      .job-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .job h3 {
+        font-size: 1.02rem;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .job .company {
+        font-size: 0.88rem;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      .job .company b {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .date {
+        flex-shrink: 0;
+        font-size: 0.76rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .job.latest .date {
+        background: var(--accent-soft);
+        border-color: transparent;
+        color: var(--accent);
+      }
+
+      .job ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+        font-size: 0.9rem;
+      }
+
+      .job li + li {
+        margin-top: 4px;
+      }
+
+      .job li::marker {
+        color: var(--accent);
+      }
+
+      .job li strong {
+        color: var(--accent);
+      }
+
+      .job details {
+        margin-top: 8px;
+        font-size: 0.9rem;
+      }
+
+      .job summary {
+        cursor: pointer;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.82rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .job summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .job summary::before {
+        content: "\F282";
+        font-family: "bootstrap-icons";
+        font-size: 0.7rem;
+        transition: transform 0.2s;
+      }
+
+      .job details[open] summary::before {
+        transform: rotate(180deg);
+      }
+
+      .job summary:hover {
+        color: var(--accent);
+      }
+
+      .job details ul {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      .job-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      @media (max-width: 560px) {
+        .card {
+          padding: 20px;
+        }
+        .skills-section {
+          padding-inline: 0;
+        }
+        .skills-section .section-title,
+        .marquee-label {
+          padding-inline: 20px;
+        }
+        .timeline::before,
+        .job-logo {
+          display: none;
+        }
+        .job {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .job-body {
+          padding: 16px;
+        }
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 3px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        background: var(--surface);
+      }
+
+      /* ===== WORK SAMPLES ===== */
+      #work {
+        margin-top: 24px;
+      }
+
+      .work-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      @media (max-width: 900px) {
+        .work-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .work {
+        display: flex;
+        flex-direction: column;
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      }
+
+      .work.linked {
+        border-color: var(--accent);
+      }
+
+      .work.flash {
+        animation: flash 1.6s ease;
+      }
+
+      @keyframes flash {
+        0%,
+        60% {
+          border-color: var(--accent);
+          box-shadow: 0 0 0 4px var(--accent-soft);
+          transform: scale(1.015);
+        }
+        100% {
+          box-shadow: 0 0 0 0 transparent;
+          transform: none;
+        }
+      }
+
+      .work-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .work-icon {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .work h3 {
+        font-size: 0.98rem;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .work .meta {
+        font-size: 0.75rem;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .work p {
+        font-size: 0.87rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+        flex: 1;
+      }
+
+      .work .btn {
+        align-self: flex-start;
+      }
+
+      .about .cta {
+        margin-top: 20px;
+      }
+
+      .about .cta p {
+        color: inherit;
+      }
+
+      .cta {
+        margin-top: 16px;
+        padding: 18px;
+        border-radius: 14px;
+        background: var(--accent);
+        color: var(--accent-text);
+      }
+
+      .cta b {
+        display: block;
+        font-size: 1rem;
+      }
+
+      .cta p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+        margin: 4px 0 12px;
+      }
+
+      .cta .btn {
+        background: var(--accent-text);
+        border-color: transparent;
+        color: var(--accent);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .cta .btn {
+          background: #0b0f17;
+        }
+      }
+
+      :root[data-theme="dark"] .cta .btn {
+        background: #0b0f17;
+      }
+
+      /* ===== THEME TOGGLE ===== */
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .theme-toggle {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        cursor: pointer;
+        font-size: 1rem;
+        transition: transform 0.3s, border-color 0.2s, color 0.2s;
+      }
+
+      .theme-toggle:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: rotate(20deg);
+      }
+
+      /* Show the moon in light mode and the sun in dark mode */
+      .theme-toggle .bi-sun-fill {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .theme-toggle .bi-sun-fill {
+          display: inline;
+        }
+        :root:not([data-theme="light"]) .theme-toggle .bi-moon-stars-fill {
+          display: none;
+        }
+      }
+
+      :root[data-theme="dark"] .theme-toggle .bi-sun-fill {
+        display: inline;
+      }
+
+      :root[data-theme="dark"] .theme-toggle .bi-moon-stars-fill {
+        display: none;
+      }
+
+      /* Smooth color change only while switching themes */
+      .theme-anim,
+      .theme-anim *,
+      .theme-anim *::before {
+        transition: background-color 0.35s ease, border-color 0.35s ease,
+          color 0.35s ease !important;
+      }
+
+      /* ===== SKILLS & TOOLS CAROUSEL ===== */
+      .skills-section {
+        margin-top: 24px;
+        padding-inline: 0;
+        overflow: hidden;
+      }
+
+      .skills-section .section-title {
+        padding-inline: 28px;
+      }
+
+      .marquee {
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 7%,
+          #000 93%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 7%,
+          #000 93%,
+          transparent
+        );
+      }
+
+      .marquee + .marquee {
+        margin-top: 12px;
+      }
+
+      .marquee-label {
+        padding-inline: 28px;
+        margin: 4px 0 10px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .marquee-label:not(:first-of-type) {
+        margin-top: 18px;
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee var(--speed, 45s) linear infinite;
+      }
+
+      .marquee.reverse .marquee-track {
+        animation-direction: reverse;
+      }
+
+      .marquee:hover .marquee-track {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-right: 12px;
+        padding: 12px 18px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        font-weight: 600;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+      }
+
+      .chip i {
+        color: var(--accent);
+        font-size: 1.05rem;
+      }
+
+      .chip:hover {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      a.chip {
+        text-decoration: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .marquee {
+          -webkit-mask-image: none;
+          mask-image: none;
+          padding-inline: 28px;
+        }
+        .marquee-track {
+          animation: none;
+          flex-wrap: wrap;
+          width: auto;
+          row-gap: 10px;
+        }
+        .marquee-track [aria-hidden="true"] {
+          display: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      /* ===== BOTTOM INFO ===== */
+      .info {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      @media (max-width: 900px) {
+        .info {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .info-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .info-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+        text-decoration: none;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+
+      a.info-link:hover {
+        border-color: var(--accent);
+        transform: translateX(3px);
+      }
+
+      .info-link i {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .info-link small {
+        display: block;
+        font-size: 0.72rem;
+        color: var(--muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .info-link span {
+        font-weight: 600;
+        font-size: 0.9rem;
+        word-break: break-word;
+      }
+
+      .edu {
+        padding: 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: var(--surface-2);
+      }
+
+      .edu h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .edu p {
+        color: var(--muted);
+        font-size: 0.88rem;
+        margin-top: 6px;
+      }
+
+      .edu .date {
+        display: inline-block;
+        margin-top: 12px;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        margin-top: 48px;
+        padding: 28px 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      footer a {
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      footer a:hover {
+        color: var(--accent);
+      }
+
+      /* ===== REVEAL ANIMATION ===== */
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      .js .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
       }
     </style>
+    <script>
+      document.documentElement.classList.add("js");
+      // Apply the saved theme before the page paints to avoid a flash
+      try {
+        const saved = localStorage.getItem("theme");
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (e) {}
+    </script>
   </head>
 
   <body>
-    <div class="container mt-3 mb-3">
-      <div
-        class="container mt-3 p-4 d-flex flex-column flex-sm-row align-items-start gap-3 justify-content-between profile-header fade-up"
-      >
-        <div class="d-flex gap-3">
-          <img src="profile.jpg" class="profile" alt="Melchor S. Joves Jr." />
-          <div>
-            <h5 class="mb-1 mt-2">Melchor S. Joves Jr</h5>
-            <p class="text-muted mb-1">
-              <i class="bi bi-geo-alt-fill me-2"></i>Governor Generoso, Davao
-              Oriental
-            </p>
-            <h6 class="mb-0">Virtual Assistant | Lead Generation Specialist</h6>
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+      <div class="wrap">
+        <a href="#top" class="brand"
+          ><span class="brand-mark">MJ</span> Melchor Joves Jr.</a
+        >
+        <ul class="nav-links">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work Samples</a></li>
+          <li><a href="#skills">Skills &amp; Tools</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Switch between light and dark mode"
+            title="Switch light / dark mode"
+          >
+            <i class="bi bi-moon-stars-fill"></i>
+            <i class="bi bi-sun-fill"></i>
+          </button>
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=jovesmelchor@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-sm"
+            ><i class="bi bi-send"></i> Hire Me</a
+          >
+        </div>
+      </div>
+    </nav>
 
+    <main class="wrap" id="top">
+      <!-- ===== HERO ===== -->
+      <section class="card hero reveal">
+        <div class="hero-main">
+          <img
+            src="profile.jpg"
+            class="avatar"
+            alt="Melchor S. Joves Jr."
+          />
+          <div>
+            <span class="status">Open to new clients</span>
+            <h1>Melchor S. Joves Jr.</h1>
+            <p class="role">Virtual Assistant · Lead Generation Specialist</p>
+            <p class="loc">
+              <i class="bi bi-geo-alt-fill"></i> Davao, Philippines · Works
+              with US teams remotely
+            </p>
+            <div class="hero-actions">
+              <a
+                href="Joves-Resume-2026.pdf"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary"
+                ><i class="bi bi-file-earmark-person"></i> View Resume</a
+              >
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=jovesmelchor@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                ><i class="bi bi-envelope"></i> Send Email</a
+              >
+              <a
+                href="https://www.linkedin.com/in/melchor-joves-8a625a379"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn"
+                ><i class="bi bi-linkedin"></i> LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <b>5+</b><span>Years of experience</span>
+          </div>
+          <div class="stat">
+            <b>20+</b><span>Qualified leads per day</span>
+          </div>
+          <div class="stat">
+            <b>100%</b><span>CRM data accuracy</span>
+          </div>
+          <div class="stat">
+            <b>80%</b><span>Better lead-to-listing efficiency</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MAIN: ABOUT (LEFT) + EXPERIENCE (RIGHT) ===== -->
+      <div class="layout">
+        <aside class="col sticky">
+          <section class="card about reveal">
+            <h2 class="section-title">
+              <i class="bi bi-person"></i> About
+            </h2>
+            <p>
+              I'm <strong>Melchor S. Joves Jr.</strong>, a hardworking,
+              tech-savvy Virtual Assistant with 5+ years supporting US
+              companies in landscaping, e-commerce, SaaS, automotive and home
+              services.
+            </p>
+            <p>
+              I specialize in <strong>lead generation</strong>,
+              <strong>targeted email outreach</strong> and
+              <strong>CRM data quality</strong>. I find the right prospects,
+              keep databases clean and accurate, and run outreach that gets
+              replies, so sales teams spend their time on opportunities that
+              convert.
+            </p>
+
+            <div class="cta">
+              <b>Looking for a lead gen VA?</b>
+              <p>Tell me about your target market and I'll get started.</p>
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=jovesmelchor@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm"
+                ><i class="bi bi-envelope"></i> Let's talk</a
+              >
+            </div>
+          </section>
+        </aside>
+
+        <div class="col">
+          <section class="card reveal" id="experience">
+            <h2 class="section-title">
+              <i class="bi bi-briefcase"></i> Experience
+              <span class="count">5 roles · 2021 – 2026</span>
+            </h2>
+
+            <div class="timeline">
+              <!-- Home Fixers -->
+              <article class="job latest">
+                <div class="job-logo">HF</div>
+                <div class="job-body">
+                  <div class="job-head">
+                    <div>
+                      <h3>Lead Generation Specialist</h3>
+                      <p class="company">
+                        <b>Home Fixers LLC</b> · Wayne, New Jersey
+                      </p>
+                    </div>
+                    <span class="date">Jan 2026 – Sep 2026</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Improved CRM data accuracy through regular audits and
+                      systematic duplicate resolution in
+                      <strong>Pipedrive</strong>.
+                    </li>
+                    <li>
+                      Standardized lead discovery workflows across verticals
+                      with <strong>25+</strong> regional or national
+                      locations.
+                    </li>
+                    <li>
+                      Streamlined daily lead routing and weekly reporting to
+                      reduce decision-making lag for CEO outreach.
+                    </li>
+                  </ul>
+                  <div class="job-foot">
+                    <div class="tags">
+                      <span class="tag">Pipedrive</span>
+                      <span class="tag">Data Quality</span>
+                      <span class="tag">Reporting</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Cars and Bids -->
+              <article class="job" data-sample="work-cars">
+                <div class="job-logo">CB</div>
+                <div class="job-body">
+                  <div class="job-head">
+                    <div>
+                      <h3>Lead Generation Specialist</h3>
+                      <p class="company">
+                        <b>Cars and Bids</b> · San Diego, California
+                      </p>
+                    </div>
+                    <span class="date">Oct 2025 – Jan 2026</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Delivered <strong>20+ qualified leads daily</strong>,
+                      sourcing enthusiast-grade vehicles (Porsche, BMW, Audi).
+                    </li>
+                    <li>
+                      A/B tested messaging scripts that lifted seller response
+                      rates by <strong>15%</strong>.
+                    </li>
+                    <li>
+                      Drove an <strong>80%</strong> improvement in
+                      lead-to-listing efficiency by analyzing response and
+                      conversion metrics.
+                    </li>
+                  </ul>
+                  <details>
+                    <summary>More details</summary>
+                    <ul>
+                      <li>
+                        Ran outbound strategies across eBay, Facebook and
+                        specialized forums to secure off-market inventory.
+                      </li>
+                      <li>
+                        Converted cold prospects through strategic messaging
+                        and email, educating sellers on the auction
+                        marketplace.
+                      </li>
+                    </ul>
+                  </details>
+                  <div class="job-foot">
+                    <div class="tags">
+                      <span class="tag">Outbound</span>
+                      <span class="tag">A/B Testing</span>
+                      <span class="tag">Marketplaces</span>
+                    </div>
+                    <a href="#work-cars" class="btn btn-sm" data-show="work-cars"
+                      ><i class="bi bi-eye"></i> View work sample</a
+                    >
+                  </div>
+                </div>
+              </article>
+
+              <!-- MyStudio -->
+              <article class="job" data-sample="work-mystudio">
+                <div class="job-logo">MS</div>
+                <div class="job-body">
+                  <div class="job-head">
+                    <div>
+                      <h3>Sales Development Analyst</h3>
+                      <p class="company">
+                        <b>MyStudio</b> · Fairfax, Virginia
+                      </p>
+                    </div>
+                    <span class="date">Jun 2024 – Aug 2025</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Maintained <strong>100% accuracy</strong> in CRM data
+                      enrichment, eliminating prospecting dead ends.
+                    </li>
+                    <li>
+                      Pre-qualified leads and ran outbound verification calls
+                      so sales focused only on verified opportunities.
+                    </li>
+                    <li>
+                      Identified key decision-makers through deep-dive
+                      research, cutting research-to-outreach time.
+                    </li>
+                  </ul>
+                  <details>
+                    <summary>More details</summary>
+                    <ul>
+                      <li>
+                        Audited lead databases and purged outdated records for
+                        a cleaner, more efficient CRM.
+                      </li>
+                    </ul>
+                  </details>
+                  <div class="job-foot">
+                    <div class="tags">
+                      <span class="tag">CRM Enrichment</span>
+                      <span class="tag">Lead Qualification</span>
+                      <span class="tag">Cold Calling</span>
+                    </div>
+                    <a
+                      href="#work-mystudio"
+                      class="btn btn-sm"
+                      data-show="work-mystudio"
+                      ><i class="bi bi-eye"></i> View work sample</a
+                    >
+                  </div>
+                </div>
+              </article>
+
+              <!-- Cohere Commerce -->
+              <article class="job" data-sample="work-cohere">
+                <div class="job-logo">CC</div>
+                <div class="job-body">
+                  <div class="job-head">
+                    <div>
+                      <h3>Lead Generation Specialist</h3>
+                      <p class="company">
+                        <b>Cohere Commerce</b> · Los Angeles, California
+                      </p>
+                    </div>
+                    <span class="date">Jun 2022 – May 2024</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Built and enriched a database of prospective brand
+                      stockists and retailers: contacts, phones, websites and
+                      socials.
+                    </li>
+                    <li>
+                      Developed lead scoring models that improved
+                      qualification accuracy and conversion rates.
+                    </li>
+                    <li>
+                      Ran personalized cold email sequences with automated
+                      follow-ups that boosted response rates.
+                    </li>
+                  </ul>
+                  <details>
+                    <summary>More details</summary>
+                    <ul>
+                      <li>
+                        Implemented data validation workflows that accelerated
+                        lead build cycles.
+                      </li>
+                      <li>
+                        Kept CRM records and interaction histories up to date,
+                        improving campaign segmentation accuracy.
+                      </li>
+                      <li>
+                        Managed end-to-end brand onboarding: account setup,
+                        technical integrations and cross-functional launch
+                        support.
+                      </li>
+                    </ul>
+                  </details>
+                  <div class="job-foot">
+                    <div class="tags">
+                      <span class="tag">Email Marketing</span>
+                      <span class="tag">Lead Scoring</span>
+                      <span class="tag">Brand Onboarding</span>
+                    </div>
+                    <a
+                      href="#work-cohere"
+                      class="btn btn-sm"
+                      data-show="work-cohere"
+                      ><i class="bi bi-eye"></i> View work sample</a
+                    >
+                  </div>
+                </div>
+              </article>
+
+              <!-- Green Garden -->
+              <article class="job">
+                <div class="job-logo">GG</div>
+                <div class="job-body">
+                  <div class="job-head">
+                    <div>
+                      <h3>Lead Generation Specialist</h3>
+                      <p class="company">
+                        <b>Green Garden Landscaping Inc.</b> · Seattle,
+                        Washington
+                      </p>
+                    </div>
+                    <span class="date">Feb 2021 – Jun 2022</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Generated high-quality leads in the commercial office
+                      market to drive top-of-funnel growth.
+                    </li>
+                    <li>
+                      Produced cost estimates for
+                      <strong>150+ projects</strong> a year, reducing
+                      forecasting errors.
+                    </li>
+                    <li>
+                      Grew Facebook page visibility and followers within six
+                      months through optimized posting.
+                    </li>
+                  </ul>
+                  <details>
+                    <summary>More details</summary>
+                    <ul>
+                      <li>
+                        Owned sales database quality in the CRM and Google
+                        Sheets through regular cleaning and updates.
+                      </li>
+                      <li>
+                        Worked with cross-functional teams to refine
+                        estimation methods and data-driven costing models.
+                      </li>
+                      <li>
+                        Monitored engagement metrics and optimized posting
+                        times to lift interaction rates.
+                      </li>
+                    </ul>
+                  </details>
+                  <div class="job-foot">
+                    <div class="tags">
+                      <span class="tag">Lead Generation</span>
+                      <span class="tag">Cost Estimating</span>
+                      <span class="tag">Social Media</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ===== WORK SAMPLES ===== -->
+      <section class="card reveal" id="work">
+            <h2 class="section-title">
+              <i class="bi bi-folder2-open"></i> Work Samples
+              <span class="count">Real lead sheets · Google Sheets</span>
+            </h2>
+
+            <div class="work-list">
+              <article class="work" id="work-cars">
+                <div class="work-top">
+                  <span class="work-icon"><i class="bi bi-car-front"></i></span>
+                  <div>
+                    <h3>Cars &amp; Bids</h3>
+                    <span class="meta">Vehicle sourcing · Lead sheet</span>
+                  </div>
+                </div>
+                <p>
+                  Sourcing enthusiast vehicles for the auction platform and
+                  connecting with sellers to bring unique, performance-oriented
+                  cars to market.
+                </p>
+                <a
+                  href="https://docs.google.com/spreadsheets/d/19WpDBEdvZgkTARrTt04QYi0kbwK3P5ZTYX0K8_O8Edo/edit?gid=2051353953#gid=2051353953"
+                  class="btn btn-sm btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open sample <i class="bi bi-box-arrow-up-right"></i
+                ></a>
+              </article>
+
+              <article class="work" id="work-mystudio">
+                <div class="work-top">
+                  <span class="work-icon"><i class="bi bi-activity"></i></span>
+                  <div>
+                    <h3>MyStudio</h3>
+                    <span class="meta">SaaS · Fitness &amp; martial arts</span>
+                  </div>
+                </div>
+                <p>
+                  Lead generation and top-of-funnel support for a SaaS platform
+                  helping fitness and martial arts businesses grow.
+                </p>
+                <a
+                  href="https://docs.google.com/spreadsheets/d/19WpDBEdvZgkTARrTt04QYi0kbwK3P5ZTYX0K8_O8Edo/edit?gid=0#gid=0"
+                  class="btn btn-sm btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open sample <i class="bi bi-box-arrow-up-right"></i
+                ></a>
+              </article>
+
+              <article class="work" id="work-cohere">
+                <div class="work-top">
+                  <span class="work-icon"><i class="bi bi-shop"></i></span>
+                  <div>
+                    <h3>Cohere Commerce</h3>
+                    <span class="meta">B2B · Retail &amp; CPG</span>
+                  </div>
+                </div>
+                <p>
+                  B2B prospecting that connected with decision-makers in retail
+                  and CPG to grow an AI-powered reviews platform.
+                </p>
+                <a
+                  href="https://docs.google.com/spreadsheets/d/19WpDBEdvZgkTARrTt04QYi0kbwK3P5ZTYX0K8_O8Edo/edit?gid=1840806935#gid=1840806935"
+                  class="btn btn-sm btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Open sample <i class="bi bi-box-arrow-up-right"></i
+                ></a>
+              </article>
+            </div>
+      </section>
+
+      <!-- ===== SKILLS & TOOLS CAROUSEL ===== -->
+      <section class="card skills-section reveal" id="skills">
+        <h2 class="section-title">
+          <i class="bi bi-stars"></i> Skills &amp; Tools
+        </h2>
+
+        <p class="marquee-label">Tools I use</p>
+        <div class="marquee" style="--speed: 50s">
+          <div class="marquee-track">
+            <span class="chip"><i class="bi bi-google"></i> Google Workspace</span>
+            <span class="chip"><i class="bi bi-linkedin"></i> LinkedIn Sales Navigator</span>
+            <span class="chip"><i class="bi bi-diagram-3"></i> HubSpot</span>
+            <span class="chip"><i class="bi bi-funnel"></i> Pipedrive</span>
             <a
-              href="JOVES - CV 2026 _ Updated.pdf"
-              class="btn custom-btn mt-3"
-              target="_blank"
-            >
-              <i class="bi bi-person-badge"></i> View Resume
-            </a>
-            <a
-              href="https://mail.google.com/mail/?view=cm&to=jovesmelchor@gmail.com"
+              class="chip"
+              href="https://www.apollo.io/"
               target="_blank"
               rel="noopener noreferrer"
-              class="btn custom-btn mt-3"
+              ><i class="bi bi-rocket-takeoff"></i> Apollo.io</a
             >
-              <i class="bi bi-envelope"></i> Send Email
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mt-4">
-        <div class="row g-3">
-          <div class="col-12 col-md-7 d-flex flex-column gap-3">
-            <div class="bg-light border p-3 rounded-3 fade-up">
-              <h4><i class="bi bi-person-circle"></i> About</h4>
-              <hr />
-              <p class="mb-0">
-                I am <b>Melchor S. Joves Jr.</b>, a dedicated and hardworking
-                Virtual Assistant with experience supporting teams across
-                various industries. Known for reliability and a collaborative
-                approach, I bring a strong commitment to delivering quality work
-                and contributing positively to team goals. <br /><br />
-                With a focus on lead generation and targeted email outreach, I
-                have developed a solid skill set in identifying potential
-                clients, managing CRM systems, and maintaining accurate data. My
-                experience includes executing structured outreach campaigns and
-                supporting business development efforts through organized,
-                data-driven processes.
-                <br /><br />
-                With strong attention to detail and a continuous willingness to
-                learn, I consistently aim to improve workflows, enhance
-                engagement, and support business growth. I am committed to
-                providing dependable support and building long-term value for
-                clients and teams.
-              </p>
-            </div>
-
-            <div class="bg-light border p-4 rounded-3 fade-up">
-              <h4 class="mb-4"><i class="bi bi-kanban me-2"></i> Experience</h4>
-              <hr />
-              <div class="timeline">
-                <div class="timeline-item latest">
-                  <h5 style="display: flex; justify-content: space-between">
-                    Lead Generation Specialist
-                    <span style="font-size: 0.65em; color: #6c757d"
-                      ><i class="bi bi-calendar me-2"></i>Dec 2025 - March
-                      2026</span
-                    >
-                  </h5>
-                  <p class="fw-semibold mb-0">Cars and Bids</p>
-                  <small class="text-muted">
-                    <i class="bi bi-geo-alt"></i>San Diego, California</small
-                  >
-                  <ul>
-                    <li>Generated 20+ qualified leads daily</li>
-                    <li>Improved conversion rates by 80%</li>
-                    <li>Used A/B testing to increase response rates</li>
-                  </ul>
-                </div>
-                <div class="timeline-item">
-                  <h5 style="display: flex; justify-content: space-between">
-                    Sales Development Analyst
-                    <span style="font-size: 0.65em; color: #6c757d"
-                      ><i class="bi bi-calendar me-2"></i>June 2025 - December
-                      2025</span
-                    >
-                  </h5>
-                  <p class="fw-semibold mb-0">MyStudio</p>
-                  <small class="text-muted">
-                    <i class="bi bi-geo-alt"></i> Fairfax, Virginia</small
-                  >
-                  <ul>
-                    <li>Pre-qualified leads for sales teams</li>
-                    <li>Maintained 100% CRM data accuracy</li>
-                    <li>Reduced research-to-outreach time</li>
-                  </ul>
-                </div>
-
-                <div class="timeline-item">
-                  <h5 style="display: flex; justify-content: space-between">
-                    Lead Generation Specialist
-                    <span style="font-size: 0.65em; color: #6c757d"
-                      ><i class="bi bi-calendar me-2"></i>Jun 2022 - May
-                      2025</span
-                    >
-                  </h5>
-                  <p class="fw-semibold mb-0">Cohere Commerce</p>
-                  <small class="text-muted">
-                    <i class="bi bi-geo-alt"></i>Los Angeles, California</small
-                  >
-                  <ul>
-                    <li>Built and maintained high-quality lead databases</li>
-                    <li>
-                      Improved lead qualification using data-driven scoring
-                      models
-                    </li>
-                    <li>
-                      Increased conversion rates through targeted prospecting
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="timeline-item">
-                  <h5 style="display: flex; justify-content: space-between">
-                    Lead Generation
-                    <span style="font-size: 0.65em; color: #6c757d"
-                      ><i class="bi bi-calendar me-2"></i>Feb 2021 - Jun
-                      2022</span
-                    >
-                  </h5>
-                  <p class="fw-semibold mb-0">Green Garden Landscaping Inc.</p>
-                  <small class="text-muted">
-                    <i class="bi bi-geo-alt"></i>Seattle, Washington</small
-                  >
-                  <ul>
-                    <li>Generated leads for commercial clients</li>
-                    <li>Managed CRM and maintained data accuracy</li>
-                    <li>Created cost estimates for 150+ projects annually</li>
-                    <li>Managed Facebook content and boosted engagement</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-5 d-flex flex-column gap-3">
-            <div class="bg-light border p-3 rounded-3 fade-up">
-              <h4><i class="bi bi-gear"></i> Skills</h4>
-              <hr />
-              <div class="row g-2">
-                <div class="col-6">
-                  <div class="skill-card rounded fade-up">
-                    <i class="bi bi-chat-dots"></i> Communication
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="skill-card rounded fade-up">
-                    <i class="bi bi-lightbulb"></i> Problem-Solving
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="skill-card rounded fade-up">
-                    <i class="bi bi-bar-chart"></i> Data Analysis
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="skill-card rounded fade-up">
-                    <i class="bi bi-people"></i> Lead Generation
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="skill-card rounded fade-up">
-                    <i class="bi bi-person-lines-fill"></i> CRM Management
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="skill-card rounded fade-up">
-                    <i class="bi bi-people me-2"></i>Interpersonal Skills
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-light border p-3 rounded-3 fade-up">
-              <h4><i class="bi bi-tools"></i> Tools</h4>
-              <hr />
-              <div class="row g-2">
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <img
-                      src="https://cdn.worldvectorlogo.com/logos/hubspot-1.svg"
-                      alt="HubSpot"
-                      class="tool-logo"
-                    />
-                    HubSpot
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <i
-                      class="bi bi-google"
-                      style="font-size: 1rem; margin-right: 8px"
-                    ></i>
-                    Google Workspace
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <i
-                      class="bi bi-file-earmark-text"
-                      style="font-size: 1.2rem; margin-right: 8px"
-                    ></i>
-                    Notion
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <a
-                      href="https://chrome.google.com/webstore/detail/instant-data-scraper/ioaamabfdbnnhimnjkpblmcghohfjfkg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="d-flex align-items-center text-decoration-none"
-                    >
-                      <i class="bi bi-file-earmark-spreadsheet me-2"></i>
-                      Instant Data Scraper
-                    </a>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <img
-                      src="https://cdn.worldvectorlogo.com/logos/brevo.svg"
-                      alt="Brevo"
-                      class="tool-logo"
-                    />
-                    Brevo
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <a
-                      href="https://www.apollo.io/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="d-flex align-items-center text-decoration-none"
-                    >
-                      <i class="bi bi-rocket me-2"></i> Apollo.io
-                    </a>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <img
-                      src="https://cdn.worldvectorlogo.com/logos/hunter.svg"
-                      alt="hunter.io"
-                      class="tool-logo"
-                    />
-                    hunter.io
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div
-                    class="skill-card rounded fade-up d-flex align-items-center"
-                  >
-                    <i
-                      class="bi bi-gear"
-                      style="font-size: 1rem; margin-right: 8px"
-                    ></i>
-                    Clay
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-light border p-4 rounded-3 fade-up h-100">
-              <h4 class="mb-3">
-                <i class="bi bi-briefcase me-2"></i> Work Example
-              </h4>
-              <hr />
-              <div class="row g-2">
-                <div class="col-12">
-                  <div class="card h-100 bg-transparent fade-up">
-                    <div class="card-body">
-                      <h5 class="card-title">MyStudio</h5>
-                      <p class="card-text small">
-                        Provided lead generation and administrative support for
-                        a SaaS platform, helping fitness and martial arts
-                        businesses grow by sourcing new leads and managing
-                        top-of-funnel systems.
-                      </p>
-                      <a
-                        href="https://docs.google.com/spreadsheets/d/19WpDBEdvZgkTARrTt04QYi0kbwK3P5ZTYX0K8_O8Edo/edit?gid=0#gid=0"
-                        class="btn custom-btn"
-                        target="_blank"
-                        rel="noopener"
-                        >View Docs</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="card h-100 bg-transparent fade-up">
-                    <div class="card-body">
-                      <h5 class="card-title">Cars & Bids</h5>
-                      <p class="card-text small">
-                        Sourcing high-quality enthusiast vehicles for the
-                        auction platform and connecting with sellers to bring
-                        unique, performance-oriented cars to market.
-                      </p>
-                      <a
-                        href="https://docs.google.com/spreadsheets/d/19WpDBEdvZgkTARrTt04QYi0kbwK3P5ZTYX0K8_O8Edo/edit?gid=2051353953#gid=2051353953"
-                        class="btn custom-btn"
-                        target="_blank"
-                        rel="noopener"
-                        >View Docs</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="card h-100 bg-transparent fade-up">
-                    <div class="card-body">
-                      <h5 class="card-title">Cohere Commerce</h5>
-                      <p class="card-text small">
-                        Driving B2B growth by connecting with key
-                        decision-makers in retail and CPG to expand an
-                        AI-powered reviews platform.
-                      </p>
-                      <a
-                        href="https://docs.google.com/spreadsheets/d/19WpDBEdvZgkTARrTt04QYi0kbwK3P5ZTYX0K8_O8Edo/edit?gid=1840806935#gid=1840806935"
-                        class="btn custom-btn"
-                        target="_blank"
-                        rel="noopener"
-                        >View Docs</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <span class="chip"><i class="bi bi-search"></i> Hunter.io</span>
+            <span class="chip"><i class="bi bi-database-gear"></i> Clay</span>
+            <span class="chip"><i class="bi bi-lightning-charge"></i> Instantly</span>
+            <span class="chip"><i class="bi bi-envelope-paper"></i> Klaviyo</span>
+            <span class="chip"><i class="bi bi-send"></i> Brevo</span>
+            <span class="chip"><i class="bi bi-journal-text"></i> Notion</span>
+            <a
+              class="chip"
+              href="https://chrome.google.com/webstore/detail/instant-data-scraper/ioaamabfdbnnhimnjkpblmcghohfjfkg"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="bi bi-table"></i> Instant Data Scraper</a
+            >
           </div>
         </div>
 
-        <div class="row mt-4 g-3">
-          <div class="col-12 col-md-4 fade-up">
-            <div class="bg-light border p-4 rounded-3 h-100">
-              <h4><i class="bi bi-telephone"></i> Contact</h4>
-              <hr />
-              <p>
-                <i class="bi bi-telephone-fill"></i> <strong>Phone:</strong>
-                <a href="tel:+639454384405">+63 9454384405</a>
-              </p>
-              <p>
-                <i class="bi bi-envelope-fill"></i> <strong>Email:</strong>
-                <a
-                  href="https://mail.google.com/mail/?view=cm&to=jovesmelchor@gmail.com"
-                  target="_blank"
-                  rel="noopener"
-                  >jovesmelchor@gmail.com</a
-                >
-              </p>
-              <p>
-                <i class="bi bi-geo-alt-fill"></i>
-                <strong>Location:</strong> Governor Generoso, Davao Oriental,
-                Philippines
-              </p>
-            </div>
+        <p class="marquee-label">Skills</p>
+        <div class="marquee reverse" style="--speed: 55s">
+          <div class="marquee-track">
+            <span class="chip"><i class="bi bi-bullseye"></i> Lead Generation</span>
+            <span class="chip"><i class="bi bi-envelope-at"></i> Email Outreach</span>
+            <span class="chip"><i class="bi bi-person-lines-fill"></i> CRM Management</span>
+            <span class="chip"><i class="bi bi-database-check"></i> Data Enrichment</span>
+            <span class="chip"><i class="bi bi-search-heart"></i> Lead Research</span>
+            <span class="chip"><i class="bi bi-graph-up-arrow"></i> Lead Scoring</span>
+            <span class="chip"><i class="bi bi-shuffle"></i> A/B Testing</span>
+            <span class="chip"><i class="bi bi-check2-square"></i> Data Entry &amp; Validation</span>
+            <span class="chip"><i class="bi bi-file-earmark-spreadsheet"></i> Google Sheets Functions</span>
+            <span class="chip"><i class="bi bi-calculator"></i> Cost Estimating</span>
+            <span class="chip"><i class="bi bi-facebook"></i> Social Media Management</span>
+            <span class="chip"><i class="bi bi-box-arrow-in-right"></i> Brand Onboarding</span>
+            <span class="chip"><i class="bi bi-chat-dots"></i> Communication</span>
+            <span class="chip"><i class="bi bi-lightbulb"></i> Problem-Solving</span>
+            <span class="chip"><i class="bi bi-people"></i> Interpersonal Skills</span>
           </div>
+        </div>
+      </section>
 
-          <div class="col-12 col-md-4 fade-up">
-            <div class="bg-light border p-4 rounded-3 h-100">
-              <h4><i class="bi bi-share"></i> Social Links</h4>
-              <hr />
-              <p>
-                <i class="bi bi-linkedin"></i> <strong>LinkedIn:</strong>
-                <a
-                  href="https://www.linkedin.com/in/melchor-joves-8a625a379"
-                  target="_blank"
-                  rel="noopener"
-                  >LinkedIn</a
-                >
-              </p>
-              <p>
-                <i class="bi bi-whatsapp"></i> <strong>WhatsApp:</strong>
-                <a
-                  href="https://wa.me/639454384405"
-                  target="_blank"
-                  rel="noopener"
-                  >WhatsApp</a
-                >
-              </p>
-              <p>
-                <i class="bi bi-instagram"></i> <strong>Instagram:</strong>
-                <a
-                  href="https://www.instagram.com/melchorjoves/"
-                  target="_blank"
-                  rel="noopener"
-                  >Instagram</a
-                >
-              </p>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-4 fade-up">
-            <div class="bg-light border p-4 rounded-3 h-100">
-              <h4 class="mb-3">
-                <i class="bi bi-mortarboard me-2"></i> Education
-              </h4>
-              <hr />
-              <div
-                class="education-item border-start border-3 border-secondary ps-3 mb-3"
+      <!-- ===== CONTACT / SOCIAL / EDUCATION ===== -->
+      <div class="info" id="contact">
+        <section class="card reveal">
+          <h2 class="section-title">
+            <i class="bi bi-telephone"></i> Contact
+          </h2>
+          <ul class="info-list">
+            <li>
+              <a class="info-link" href="tel:+639454384405">
+                <i class="bi bi-telephone-fill"></i>
+                <div><small>Phone</small><span>+63 945 438 4405</span></div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="info-link"
+                href="https://mail.google.com/mail/?view=cm&to=jovesmelchor@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <h5 class="mb-1">
-                  Bachelor of Science in Office Administration
-                </h5>
-                <p class="mb-0 fw-semibold">
-                  Governor Generoso College of Arts, Sciences & Technology
-                </p>
-                <small class="text-muted">Graduated: 2025</small>
+                <i class="bi bi-envelope-fill"></i>
+                <div><small>Email</small><span>jovesmelchor@gmail.com</span></div>
+              </a>
+            </li>
+            <li>
+              <div class="info-link">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div>
+                  <small>Location</small
+                  ><span>Governor Generoso, Davao Oriental, PH</span>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </li>
+          </ul>
+        </section>
 
-    <footer class="bg-dark text-white text-center py-3 mt-4">
-      <p class="mb-0">© 2026 Melchor S. Joves Jr. All rights reserved.</p>
+        <section class="card reveal">
+          <h2 class="section-title">
+            <i class="bi bi-share"></i> Social Links
+          </h2>
+          <ul class="info-list">
+            <li>
+              <a
+                class="info-link"
+                href="https://www.linkedin.com/in/melchor-joves-8a625a379"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-linkedin"></i>
+                <div><small>LinkedIn</small><span>Melchor Joves</span></div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="info-link"
+                href="https://wa.me/639454384405"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-whatsapp"></i>
+                <div><small>WhatsApp</small><span>Message me</span></div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="info-link"
+                href="https://www.instagram.com/melchorjoves/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-instagram"></i>
+                <div><small>Instagram</small><span>@melchorjoves</span></div>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card reveal">
+          <h2 class="section-title">
+            <i class="bi bi-mortarboard"></i> Education
+          </h2>
+          <div class="edu">
+            <h3>Bachelor of Science in Office Administration</h3>
+            <p>
+              Governor Generoso College of Arts, Sciences &amp; Technology ·
+              Davao Oriental, PH
+            </p>
+            <span class="date">Graduated Jun 2025</span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p>© 2026 Melchor S. Joves Jr. All rights reserved.</p>
+        <a href="#top">Back to top <i class="bi bi-arrow-up"></i></a>
+      </div>
     </footer>
 
     <script>
+      // Light / dark mode toggle
+      const root = document.documentElement;
+      const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const isDark = () =>
+        root.dataset.theme
+          ? root.dataset.theme === "dark"
+          : darkQuery.matches;
+
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        const next = isDark() ? "light" : "dark";
+        root.classList.add("theme-anim");
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem("theme", next);
+        } catch (e) {}
+        setTimeout(() => root.classList.remove("theme-anim"), 400);
+      });
+
+      // Duplicate carousel items so the loop is seamless
+      document.querySelectorAll(".marquee-track").forEach((track) => {
+        [...track.children].forEach((item) => {
+          const clone = item.cloneNode(true);
+          clone.setAttribute("aria-hidden", "true");
+          clone.setAttribute("tabindex", "-1");
+          track.appendChild(clone);
+        });
+      });
+
+      // "View work sample" buttons scroll to and highlight the matching sample
+      document.querySelectorAll("[data-show]").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          const card = document.getElementById(btn.dataset.show);
+          if (!card) return;
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          card.classList.remove("flash");
+          void card.offsetWidth;
+          card.classList.add("flash");
+        });
+      });
+
+      // Hovering a job outlines its sample on the right
+      document.querySelectorAll(".job[data-sample]").forEach((job) => {
+        const card = document.getElementById(job.dataset.sample);
+        if (!card) return;
+        job.addEventListener("mouseenter", () => card.classList.add("linked"));
+        job.addEventListener("mouseleave", () =>
+          card.classList.remove("linked")
+        );
+      });
+
+      // Reveal sections as they scroll into view
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
       // Disable right-click
       document.addEventListener("contextmenu", (e) => e.preventDefault());
 
