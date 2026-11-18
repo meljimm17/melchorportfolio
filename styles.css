@@ -1,36 +1,34 @@
 /* ===== THEME ===== */
-/* Pure dark mode by default with matte crimson accents matching profile.jpg */
+/* Modern minimalist charcoal black & white chalk palette (dark mode by default) */
 :root,
 :root[data-theme="dark"] {
-  --bg: #08080a;
-  --surface: #111114;
-  --surface-2: #18181c;
-  --text: #f4f4f5;
-  --muted: #a1a1aa;
-  --border: #26262b;
-  --accent: #d94c53;
-  --accent-fill: #9b232a;
-  --accent-soft: rgba(217, 76, 83, 0.13);
-  --accent-text: #ffffff;
-  --shadow: 0 1px 2px rgba(0, 0, 0, 0.45),
-    0 8px 24px rgba(0, 0, 0, 0.35);
-  --radius: 18px;
+  --bg: #0c0c0d;
+  --surface: #141416;
+  --surface-2: #1b1b1e;
+  --text: #f3f2ee;
+  --muted: #9b9b9e;
+  --border: #27272a;
+  --accent: #f3f2ee;
+  --accent-fill: #f3f2ee;
+  --accent-soft: rgba(243, 242, 238, 0.08);
+  --accent-text: #111113;
+  --shadow: none;
+  --radius: 14px;
 }
 
-/* Optional light theme when toggled by the visitor */
+/* Optional light theme (white chalk canvas + charcoal black ink) */
 :root[data-theme="light"] {
-  --bg: #f6f5f5;
-  --surface: #ffffff;
-  --surface-2: #faf8f8;
-  --text: #111114;
-  --muted: #52525b;
-  --border: #e4e4e7;
-  --accent: #9b232a;
-  --accent-fill: #8f1f26;
-  --accent-soft: #fde8e9;
-  --accent-text: #ffffff;
-  --shadow: 0 1px 2px rgba(17, 17, 20, 0.04),
-    0 8px 24px rgba(17, 17, 20, 0.06);
+  --bg: #f3f2ee;
+  --surface: #faf9f6;
+  --surface-2: #eceae4;
+  --text: #141416;
+  --muted: #5c5c60;
+  --border: #dedcd5;
+  --accent: #141416;
+  --accent-fill: #141416;
+  --accent-soft: rgba(20, 20, 22, 0.07);
+  --accent-text: #f3f2ee;
+  --shadow: 0 1px 2px rgba(20, 20, 22, 0.04);
 }
 
 *,
@@ -172,7 +170,7 @@ p {
 
 .btn-primary:hover {
   color: var(--accent-text);
-  filter: brightness(1.08);
+  opacity: 0.88;
 }
 
 .btn-sm {
@@ -267,10 +265,10 @@ p {
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 currentColor;
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 0 5px transparent;
+    opacity: 0.35;
   }
 }
 
@@ -631,11 +629,10 @@ p {
   0%,
   60% {
     border-color: var(--accent);
-    box-shadow: 0 0 0 4px var(--accent-soft);
+    background: var(--surface);
     transform: scale(1.015);
   }
   100% {
-    box-shadow: 0 0 0 0 transparent;
     transform: none;
   }
 }
@@ -709,20 +706,21 @@ p {
 }
 
 .cta .btn {
-  background: var(--bg);
-  border-color: rgba(255, 255, 255, 0.16);
-  color: var(--text);
+  background: var(--accent-text);
+  border-color: transparent;
+  color: var(--accent-fill);
 }
 
 .cta .btn:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #ffffff;
+  border-color: transparent;
+  color: var(--accent-fill);
+  opacity: 0.9;
 }
 
 :root[data-theme="light"] .cta .btn {
-  background: #ffffff;
+  background: var(--accent-text);
   border-color: transparent;
-  color: var(--accent);
+  color: var(--accent-fill);
 }
 
 /* ===== THEME TOGGLE ===== */
