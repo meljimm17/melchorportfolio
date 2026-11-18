@@ -22,48 +22,38 @@
 
     <style>
       /* ===== THEME ===== */
-      :root {
-        --bg: #f4f5f7;
-        --surface: #ffffff;
-        --surface-2: #f8fafc;
-        --text: #0f172a;
-        --muted: #64748b;
-        --border: #e2e8f0;
-        --accent: #0f766e;
-        --accent-soft: #ccfbf1;
+      /* Pure dark mode by default with matte crimson accents matching profile.jpg */
+      :root,
+      :root[data-theme="dark"] {
+        --bg: #08080a;
+        --surface: #111114;
+        --surface-2: #18181c;
+        --text: #f4f4f5;
+        --muted: #a1a1aa;
+        --border: #26262b;
+        --accent: #d94c53;
+        --accent-fill: #9b232a;
+        --accent-soft: rgba(217, 76, 83, 0.13);
         --accent-text: #ffffff;
-        --shadow: 0 1px 2px rgba(15, 23, 42, 0.04),
-          0 8px 24px rgba(15, 23, 42, 0.06);
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.45),
+          0 8px 24px rgba(0, 0, 0, 0.35);
         --radius: 18px;
       }
 
-      /* Dark theme: follows the device unless the visitor picks one */
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) {
-          --bg: #0b0f17;
-          --surface: #121826;
-          --surface-2: #172033;
-          --text: #e5e7eb;
-          --muted: #94a3b8;
-          --border: #243046;
-          --accent: #2dd4bf;
-          --accent-soft: rgba(45, 212, 191, 0.14);
-          --accent-text: #042f2e;
-          --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
-        }
-      }
-
-      :root[data-theme="dark"] {
-        --bg: #0b0f17;
-        --surface: #121826;
-        --surface-2: #172033;
-        --text: #e5e7eb;
-        --muted: #94a3b8;
-        --border: #243046;
-        --accent: #2dd4bf;
-        --accent-soft: rgba(45, 212, 191, 0.14);
-        --accent-text: #042f2e;
-        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+      /* Optional light theme when toggled by the visitor */
+      :root[data-theme="light"] {
+        --bg: #f6f5f5;
+        --surface: #ffffff;
+        --surface-2: #faf8f8;
+        --text: #111114;
+        --muted: #52525b;
+        --border: #e4e4e7;
+        --accent: #9b232a;
+        --accent-fill: #8f1f26;
+        --accent-soft: #fde8e9;
+        --accent-text: #ffffff;
+        --shadow: 0 1px 2px rgba(17, 17, 20, 0.04),
+          0 8px 24px rgba(17, 17, 20, 0.06);
       }
 
       *,
@@ -137,7 +127,7 @@
         width: 34px;
         height: 34px;
         border-radius: 10px;
-        background: var(--accent);
+        background: var(--accent-fill);
         color: var(--accent-text);
         font-size: 0.85rem;
       }
@@ -198,8 +188,8 @@
       }
 
       .btn-primary {
-        background: var(--accent);
-        border-color: var(--accent);
+        background: var(--accent-fill);
+        border-color: var(--accent-fill);
         color: var(--accent-text);
       }
 
@@ -459,8 +449,8 @@
       }
 
       .job.latest .job-logo {
-        background: var(--accent);
-        border-color: var(--accent);
+        background: var(--accent-fill);
+        border-color: var(--accent-fill);
         color: var(--accent-text);
       }
 
@@ -726,7 +716,7 @@
         margin-top: 16px;
         padding: 18px;
         border-radius: 14px;
-        background: var(--accent);
+        background: var(--accent-fill);
         color: var(--accent-text);
       }
 
@@ -742,19 +732,20 @@
       }
 
       .cta .btn {
-        background: var(--accent-text);
+        background: var(--bg);
+        border-color: rgba(255, 255, 255, 0.16);
+        color: var(--text);
+      }
+
+      .cta .btn:hover {
+        border-color: rgba(255, 255, 255, 0.4);
+        color: #ffffff;
+      }
+
+      :root[data-theme="light"] .cta .btn {
+        background: #ffffff;
         border-color: transparent;
         color: var(--accent);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) .cta .btn {
-          background: #0b0f17;
-        }
-      }
-
-      :root[data-theme="dark"] .cta .btn {
-        background: #0b0f17;
       }
 
       /* ===== THEME TOGGLE ===== */
@@ -784,26 +775,17 @@
         transform: rotate(20deg);
       }
 
-      /* Show the moon in light mode and the sun in dark mode */
-      .theme-toggle .bi-sun-fill {
+      /* Show the sun in dark mode (default) and the moon in light mode */
+      .theme-toggle .bi-moon-stars-fill {
         display: none;
       }
 
-      @media (prefers-color-scheme: dark) {
-        :root:not([data-theme="light"]) .theme-toggle .bi-sun-fill {
-          display: inline;
-        }
-        :root:not([data-theme="light"]) .theme-toggle .bi-moon-stars-fill {
-          display: none;
-        }
+      :root[data-theme="light"] .theme-toggle .bi-sun-fill {
+        display: none;
       }
 
-      :root[data-theme="dark"] .theme-toggle .bi-sun-fill {
+      :root[data-theme="light"] .theme-toggle .bi-moon-stars-fill {
         display: inline;
-      }
-
-      :root[data-theme="dark"] .theme-toggle .bi-moon-stars-fill {
-        display: none;
       }
 
       /* Smooth color change only while switching themes */
@@ -1716,13 +1698,9 @@
     </footer>
 
     <script>
-      // Light / dark mode toggle
+      // Light / dark mode toggle (pure dark mode by default)
       const root = document.documentElement;
-      const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      const isDark = () =>
-        root.dataset.theme
-          ? root.dataset.theme === "dark"
-          : darkQuery.matches;
+      const isDark = () => root.dataset.theme !== "light";
 
       document.getElementById("themeToggle").addEventListener("click", () => {
         const next = isDark() ? "light" : "dark";
